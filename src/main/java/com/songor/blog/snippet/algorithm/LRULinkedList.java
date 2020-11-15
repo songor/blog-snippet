@@ -15,7 +15,6 @@ import java.util.Objects;
  * @author chensongyu
  */
 public class LRULinkedList<T> {
-
   private static final int DEFAULT_CAPACITY = 15;
 
   private final Node<T> head = new Node<>(null, null);
@@ -96,7 +95,6 @@ public class LRULinkedList<T> {
   }
 
   private static class Node<T> {
-
     T data;
     Node<T> next;
 
