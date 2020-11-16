@@ -1,5 +1,7 @@
 package com.songor.blog.snippet.algorithm;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -46,12 +48,14 @@ public class LRULinkedList<T> {
     }
   }
 
-  public void print() {
+  public List<T> get() {
+    List<T> result = new ArrayList<>();
     Node<T> node = head.next;
     while (node != null) {
-      System.out.println(node.data);
+      result.add(node.data);
       node = node.next;
     }
+    return result;
   }
 
   private Node<T> findPrevious(T element) {
