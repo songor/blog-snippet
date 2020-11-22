@@ -25,4 +25,12 @@ class SortTest {
     insertionSort.sort(arr, arr.length);
     assertArrayEquals(SORTED_ARR, arr);
   }
+
+  @Test
+  void mergeSort() {
+    MergeSort mergeSort = new MergeSort();
+    int[] arr = Arrays.copyOf(ARR, ARR.length);
+    mergeSort.sort(arr, arr.length);
+    assertArrayEquals(SORTED_ARR, arr);
+  }
 }
