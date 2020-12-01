@@ -33,4 +33,12 @@ class SortTest {
     mergeSort.sort(arr, arr.length);
     assertArrayEquals(SORTED_ARR, arr);
   }
+
+  @Test
+  void quickSort() {
+    QuickSort quickSort = new QuickSort();
+    int[] arr = Arrays.copyOf(ARR, ARR.length);
+    quickSort.sort(arr, arr.length);
+    assertArrayEquals(SORTED_ARR, arr);
+  }
 }
