@@ -41,4 +41,12 @@ class SortTest {
     quickSort.sort(arr, arr.length);
     assertArrayEquals(SORTED_ARR, arr);
   }
+
+  @Test
+  void countingSort() {
+    CountingSort countingSort = new CountingSort();
+    int[] arr = Arrays.copyOf(ARR, ARR.length);
+    countingSort.sort(arr, arr.length);
+    assertArrayEquals(SORTED_ARR, arr);
+  }
 }
