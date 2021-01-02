@@ -10,13 +10,13 @@ import java.util.List;
  */
 public class PreOrderBinaryTreeTraverse implements BinaryTreeTraverse {
   @Override
-  public List<String> traverse(Node<String> node) {
-    List<String> result = new ArrayList<>();
+  public <T> List<T> traverse(Node<T> node) {
+    List<T> result = new ArrayList<>();
     preOrder(node, result);
     return result;
   }
 
-  private void preOrder(Node<String> node, List<String> result) {
+  private <T> void preOrder(Node<T> node, List<T> result) {
     if (node == null) {
       return;
     }

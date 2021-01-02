@@ -14,5 +14,5 @@ public interface BinaryTreeTraverse {
    * @param node 二叉树
    * @return 遍历结果
    */
-  List<String> traverse(Node<String> node);
+  <T> List<T> traverse(Node<T> node);
 }
