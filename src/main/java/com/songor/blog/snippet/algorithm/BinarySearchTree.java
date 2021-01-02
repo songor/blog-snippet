@@ -153,6 +153,80 @@ public class BinarySearchTree {
     }
   }
 
+  /**
+   * 快速查找最大节点
+   *
+   * @return 最大节点
+   */
+  public Node<Integer> findMax() {
+    Node<Integer> max = tree;
+    if (max == null) {
+      return null;
+    }
+    while (max.getRight() != null) {
+      max = max.getRight();
+    }
+    return max;
+  }
+
+  /**
+   * 快速查找最小节点
+   *
+   * @return 最小节点
+   */
+  public Node<Integer> findMin() {
+    Node<Integer> min = tree;
+    if (min == null) {
+      return null;
+    }
+    while (min.getLeft() != null) {
+      min = min.getLeft();
+    }
+    return min;
+  }
+
+  /**
+   * 快速查找前驱节点
+   *
+   * @param data 当前节点的值
+   * @return 当前节点的前驱节点
+   */
+  public Node<Integer> findPredecessor(int data) {
+    Node<Integer> node = find(data);
+    if (node == null) {
+      return null;
+    }
+    Node<Integer> predecessor = node.getLeft();
+    if (predecessor == null) {
+      return null;
+    }
+    while (predecessor.getRight() != null) {
+      predecessor = predecessor.getRight();
+    }
+    return predecessor;
+  }
+
+  /**
+   * 快速查找后继节点
+   *
+   * @param data 当前节点的值
+   * @return 当前节点的后继节点
+   */
+  public Node<Integer> findSuccessor(int data) {
+    Node<Integer> node = find(data);
+    if (node == null) {
+      return null;
+    }
+    Node<Integer> successor = node.getRight();
+    if (successor == null) {
+      return null;
+    }
+    while (successor.getLeft() != null) {
+      successor = successor.getLeft();
+    }
+    return successor;
+  }
+
   public Node<Integer> getTree() {
     return tree;
   }
