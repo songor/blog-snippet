@@ -17,7 +17,11 @@ public class BinarySearchTree {
    * @return 要查找的节点
    */
   public Node<Integer> find(int data) {
-    Node<Integer> current = tree;
+    return findBaseNode(tree, data);
+  }
+
+  protected Node<Integer> findBaseNode(Node<Integer> node, int data) {
+    Node<Integer> current = node;
     while (current != null) {
       if (data < current.getData()) {
         current = current.getLeft();
@@ -36,13 +40,18 @@ public class BinarySearchTree {
    * @param data 要插入的值
    */
   public void insert(int data) {
-    if (tree == null) {
-      tree = new Node<>();
-      tree.setData(data);
+    insertBaseNode(tree, data);
+  }
+
+  protected void insertBaseNode(Node<Integer> node, int data) {
+    if (node == null) {
+      node = new Node<>();
+      node.setData(data);
+      tree = node;
       return;
     }
 
-    Node<Integer> current = tree;
+    Node<Integer> current = node;
     while (current != null) {
       if (data < current.getData()) {
         if (current.getLeft() == null) {
@@ -71,6 +80,7 @@ public class BinarySearchTree {
    *
    * @param data 要删除节点的值
    */
+  @Deprecated
   public void delete(int data) {
     Node<Integer> current = tree;
     Node<Integer> parentOfCurrent = null;
@@ -147,6 +157,7 @@ public class BinarySearchTree {
       if (parentOfMinimum == current) {
         parentOfMinimum.setRight(minimum.getRight());
       } else {
+        // FIXME 此处需要判断要删除节点的子节点
         parentOfMinimum.setLeft(null);
       }
       return;
