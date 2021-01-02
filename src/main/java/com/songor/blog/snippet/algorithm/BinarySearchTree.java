@@ -8,7 +8,7 @@ import java.util.Objects;
  * @author chensongyu
  */
 public class BinarySearchTree {
-  private Node<Integer> tree;
+  protected Node<Integer> tree;
 
   /**
    * 查找
