@@ -80,7 +80,6 @@ public class BinarySearchTree {
    *
    * @param data 要删除节点的值
    */
-  @Deprecated
   public void delete(int data) {
     Node<Integer> current = tree;
     Node<Integer> parentOfCurrent = null;
